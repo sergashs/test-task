@@ -80,11 +80,11 @@ module.exports = {
 					to: 'images',
 					noErrorOnMissing: true
 				},
-				{
-					from: PATHS.src + '/js/',
-					to: 'js',
-					noErrorOnMissing: true
-				},
+				// {
+				// 	from: PATHS.src + '/js/',
+				// 	to: 'js',
+				// 	noErrorOnMissing: true
+				// },
 				// {
 				// 	from: PATHS.src + '/styles/',
 				// 	to: 'styles',
