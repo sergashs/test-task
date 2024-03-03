@@ -1,0 +1,31 @@
+.input {
+  font-family: $font-first;
+  font-size: 1.6rem;
+  color: #424849;
+  background: #f2f5f5;
+  border-radius: 0.8rem;
+  border: solid 0.1rem #d6dcdd;
+
+  &::placeholder {
+    color: #a5b1b2;
+  }
+
+  &:hover {
+    border-color: #146b87;
+  }
+
+  &:focus {
+    background: #fafafa;
+    border-color: #697071;
+  }
+
+  &:disabled {
+    color: #ffffff;
+    background: #d6dcdd;
+    border-color: #d6dcdd;
+  }
+
+  &.input-md {
+    padding: 1.2rem 1.6rem 1.2rem 1.6rem;
+  }
+}

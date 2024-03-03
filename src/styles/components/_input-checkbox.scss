@@ -1,0 +1,117 @@
+.input-checkbox {
+  position: relative;
+
+  input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+
+    &:checked {
+      + .box {
+        background-image: url("data:image/svg+xml,%3Csvg width='14' height='12' viewBox='0 0 14 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.375 8.21591L4.05842 10.2773C4.49053 10.6092 5.10885 10.5341 5.44893 10.1084L12.625 1.125' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+        background-color: #146b87;
+        border-color: #146b87;
+
+        &:hover {
+          background-color: #28a2ca;
+          border-color: #28a2ca;
+        }
+      }
+    }
+
+    &:disabled {
+      + .box {
+        background-color: #d6dcdd;
+        border-color: #d6dcdd;
+      }
+    }
+  }
+
+  .box {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    background: white;
+    border: solid 0.1rem #424849;
+    border-radius: 0.4rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: $transition;
+  }
+
+  &:hover {
+    .box {
+      border-color: #28a2ca;
+    }
+  }
+
+  &.checkbox-block {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 1.1rem 1.2rem 1.2rem;
+    transition: $transition;
+
+    .box {
+      margin-right: 0.8rem;
+    }
+
+    .tooltip {
+      margin-left: 0.45rem;
+    }
+
+    .checkbox-label {
+      margin-right: auto;
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: #292e2f;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #e0ecf0;
+        z-index: -1;
+        border-radius: 0.8rem;
+        transition: $transition;
+      }
+    }
+
+    input {
+      &:checked {
+        ~ .box {
+          background-image: url("data:image/svg+xml,%3Csvg width='14' height='12' viewBox='0 0 14 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.375 8.21591L4.05842 10.2773C4.49053 10.6092 5.10885 10.5341 5.44893 10.1084L12.625 1.125' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+          background-color: #146b87;
+          border-color: #146b87;
+        }
+
+        ~ .tooltip {
+          color: white;
+        }
+
+        ~ .checkbox-label {
+          color: white;
+
+          &::before {
+            background: #146b87;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .tooltip {
+        color: white;
+      }
+
+      .checkbox-label {
+        color: white;
+
+        &::before {
+          background: #28a2ca;
+        }
+      }
+    }
+  }
+}

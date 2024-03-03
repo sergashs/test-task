@@ -1,0 +1,79 @@
+.customSelect {
+  position: relative;
+
+  .custom-select {
+    display: none;
+  }
+
+  .custom-select-opener {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4rem 1.6rem;
+    font-size: 1.4rem;
+    color: #424849;
+    background: #f2f5f5;
+    border: solid 0.1rem #d6dcdd;
+    border-radius: 0.8rem;
+
+    &::after {
+      content: "";
+      width: 1.2rem;
+      height: 1.2rem;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.25 3.75L6.70711 8.29289C6.31658 8.68342 5.68342 8.68342 5.29289 8.29289L0.75 3.75' stroke='%23424849' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      transition: $transition;
+    }
+  }
+
+  &:hover {
+    .custom-select-opener {
+      color: #146b87;
+      border-color: #146b87;
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.25 3.75L6.70711 8.29289C6.31658 8.68342 5.68342 8.68342 5.29289 8.29289L0.75 3.75' stroke='%23146B87' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+
+  &.is-open {
+    .custom-select-opener {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+
+    .custom-select-panel {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+  }
+
+  .custom-select-panel {
+    position: absolute;
+    top: calc(100% + 0.3rem);
+    left: 0;
+    width: 100%;
+    color: #424849;
+    background: #f2f5f5;
+    border: solid 0.1rem #d6dcdd;
+    border-radius: 0.8rem;
+    transition: $transition;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow: hidden;
+    transform: translateY(-1rem);
+
+    .custom-select-option {
+      padding: 1rem;
+
+      &.has-focus {
+        color: white;
+        background: #146b87;
+      }
+    }
+  }
+}

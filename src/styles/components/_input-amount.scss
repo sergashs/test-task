@@ -1,0 +1,32 @@
+.input-amount {
+  display: flex;
+  align-items: center;
+
+  .btn {
+    flex-shrink: 0;
+  }
+
+  .btn-minus {
+    margin-right: 1.6rem;
+  }
+
+  .btn-plus {
+    margin-left: 1.6rem;
+  }
+
+  .input {
+    text-align: center;
+
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
+}
