@@ -334,6 +334,10 @@
         @include breakpoint(md, max) {
           margin-bottom: 2.4rem;
         }
+
+        @include breakpoint(sm, max) {
+          font-size: 1rem;
+        }
       }
     }
   }
